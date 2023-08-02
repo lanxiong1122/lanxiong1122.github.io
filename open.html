@@ -7,18 +7,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       height: 100vh;
     }
   </style>
 </head>
 <body>
   <div class="center">
+    <input type="text" id="urlInput" placeholder="Enter URL Scheme" onchange="updateUrlScheme()"/>
     <button onclick="openApp()">Open App</button>
+    <p id="urlSchemeText"></p>
   </div>
 
   <script>
+    var urlScheme = "ylhb://?pageCode=mbhbgs_topic";
+
+    function updateUrlScheme() {
+      var inputElement = document.getElementById("urlInput");
+      urlScheme = inputElement.value;
+      document.getElementById("urlSchemeText").textContent = urlScheme;
+    }
+
     function openApp() {
-      var urlScheme = "ylhb://?pageCode=mbhbgs_pgxg";
       window.location.href = urlScheme;
     }
   </script>
