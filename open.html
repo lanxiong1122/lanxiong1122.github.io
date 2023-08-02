@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open App Button</title>
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <button onclick="openApp()">Open App</button>
+  </div>
+
+  <script>
+    function openApp() {
+      var urlScheme = "ylhb://?pageCode=mbhbgs_topic";
+      window.location.href = urlScheme;
+    }
+  </script>
+</body>
+</html>
