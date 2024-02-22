@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>简单下载页面</title>
+    
+    <!-- 添加内联样式 -->
+    <style>
+        /* 设置页面背景为渐变色 */
+        body {
+            background: linear-gradient(to bottom right, #a9d4eb, #5ac8fa);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 设置下载按钮样式 */
+        .download-button {
+            display: inline-block;
+            padding: 1em 2em;
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 6px;
+            background-color: #3498db;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
-    <h1>应用下载</h1>
+    <h1 class="center">应用下载</h1>
     <p>请按下面的按钮下载并安装我们的应用：</p>
-    <a href="itms-services:///?action=download-manifest&url=https://lanxiong1122.github.io/demo.plist">点击下载</a>
-    
-    <p><strong>注意:</strong> 这个链接仅在已加入移动设备管理（MDM）方案或配置了企业级应用部署的iOS设备上有效。</p>
+    <a href="itms-services:///?action=download-manifest&url=https://lanxiong1122.github.io/demo.plist" class="download-button">点击下载</a>
 </body>
 </html>
