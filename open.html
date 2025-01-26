@@ -8,6 +8,7 @@
             try {
                 if (AndroidWebView.openThirdApp(uri)) { // 使用正确的对象名称
                     console.log("成功调用了第三方应用");
+                    AndroidWebView.killProgress();
                 } else {
                     console.error("调用第三方应用失败");
                 }
