@@ -6,7 +6,7 @@
         function callNativeApp() {
             var uri = "xingqishijie://mengbaoqiyuji/mainactivity?jsonData=1_20001";
             try {
-                if (Android.openThirdApp(uri)) {
+                if (AndroidWebView.openThirdApp(uri)) { // 使用正确的对象名称
                     console.log("成功调用了第三方应用");
                 } else {
                     console.error("调用第三方应用失败");
@@ -25,4 +25,3 @@
     <!-- 您的网页内容 -->
 </body>
 </html>
-
