@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Open Third App</title>
-    <script type="text/javascript">
-        function callNativeApp() {
-            var uri = "xingqishijie://mengbaoqiyuji/mainactivity?jsonData=1_20001";
-            try {
-                if (AndroidWebView.openThirdApp(uri)) { // 使用正确的对象名称
-                    console.log("成功调用了第三方应用");
-                    AndroidWebView.killProgress();
-                } else {
-                    console.error("调用第三方应用失败");
-                }
-            } catch (e) {
-                console.error("调用时发生错误: ", e);
-            }
-        }
+    <title>Open App Button</title>
+  <style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        padding: 48px;
+    }
 
-        window.onload = function () {
-            callNativeApp(); // 页面加载完成后自动调用
-        };
-    </script>
+    input[type="text"], button {
+        font-size: 24px;
+        padding: 16px;
+        width: 100%;
+        border-radius: 8px; /* 添加圆角 */
+        margin-bottom: 32px; /* 添加间距 */
+    }
+
+    input[type="text"] {
+        border: 2px solid #007bff; /* 边框颜色为蓝色 */
+    }
+
+    button {
+        color: #007bff; /* 文本颜色为蓝色 */
+        border: 2px solid #007bff; /* 边框颜色为蓝色 */
+        cursor: pointer; /* 更改鼠标样式 */
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="center">
+    <input type="text" id="urlInput" placeholder="Enter URL Scheme" onchange="updateUrlScheme()"/>
+    <button onclick="openApp()">Open App</button>
+    <p id="urlSchemeText"></p>
+  </div>
+
+    <script>
+            var urlScheme = "videostore://com.huawei.himovie.lyhplugin/mainActivity";
+
+    function updateUrlScheme() {
+        var inputElement = document.getElementById("urlInput");
+        urlScheme = inputElement.value;
+        document.getElementById("urlSchemeText").textContent = urlScheme;
+    }
+
+    function openApp() {
+        window.location.href = urlScheme;
+    }
+  </script>
 </body>
 </html>
