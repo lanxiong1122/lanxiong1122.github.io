@@ -1,55 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Open App Button</title>
-  <style>
-    .center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
-      padding: 48px;
-    }
+    <title>Open Third App</title>
+    <script type="text/javascript">
+        function callNativeApp() {
+            var uri = "xingqishijie://mengbaoqiyuji/mainactivity?jsonData=1_20001";
+            try {
+                if (Android.openThirdApp(uri)) {
+                    console.log("成功调用了第三方应用");
+                } else {
+                    console.error("调用第三方应用失败");
+                }
+            } catch (e) {
+                console.error("调用时发生错误: ", e);
+            }
+        }
 
-    input[type="text"], button {
-      font-size: 24px;
-      padding: 16px;
-      width: 100%;
-      border-radius: 8px; /* 添加圆角 */
-      margin-bottom: 32px; /* 添加间距 */
-    }
-    
-    input[type="text"] {
-      border: 2px solid #007bff; /* 边框颜色为蓝色 */
-    }
-
-    button {
-      color: #007bff; /* 文本颜色为蓝色 */
-      border: 2px solid #007bff; /* 边框颜色为蓝色 */
-      cursor: pointer; /* 更改鼠标样式 */
-    }
-  </style>
+        window.onload = function () {
+            callNativeApp(); // 页面加载完成后自动调用
+        };
+    </script>
 </head>
 <body>
-  <div class="center">
-    <input type="text" id="urlInput" placeholder="Enter URL Scheme" onchange="updateUrlScheme()"/>
-    <button onclick="openApp()">Open App</button>
-    <p id="urlSchemeText"></p>
-  </div>
-
-  <script>
-    var urlScheme = "videostore://com.huawei.himovie.lyhplugin/mainActivity";
-   
-    function updateUrlScheme() {
-      var inputElement = document.getElementById("urlInput");
-      urlScheme = inputElement.value;
-      document.getElementById("urlSchemeText").textContent = urlScheme;
-    }
-
-    function openApp() {
-      window.location.href = urlScheme;
-    }
-  </script>
+    <!-- 您的网页内容 -->
 </body>
 </html>
+
