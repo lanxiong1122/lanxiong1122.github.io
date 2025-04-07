@@ -1,0 +1,15 @@
+{  
+    "applinks": {  
+        "apps": [],  
+        "details": [  
+            {
+                "appID": "GXGAXLY397.com.daoran.AI.mengbaoqiyuji.phone",
+                "paths": ["*"]  
+            },
+            {
+                "appID": "GXGAXLY397.com.daoran.AI.xingqihuolipaidui.phone",
+                "paths": ["*"]  
+            }
+        ]  
+    }  
+}
