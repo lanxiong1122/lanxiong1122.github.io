@@ -12,27 +12,17 @@
 <h2>Select a file:</h2>
 
 <!-- 相机和相册的选择按钮 -->
-<button onclick="openCamera()">Open Camera</button>
-<button onclick="openGallery()">Open Gallery</button>
+<button onclick="document.getElementById('cameraInput').click()">Open Camera</button>
+<button onclick="document.getElementById('galleryInput').click()">Open Gallery</button>
 
 <!-- 隐藏的文件输入框 -->
-<input type="file" name="cameraPhoto" id="cameraPhotoInput" class="hidden" accept="image/*" capture="camera" onchange="handleImageSelect(this)">
-<input type="file" name="galleryPhoto" id="galleryPhotoInput" class="hidden" accept="image/*" onchange="handleImageSelect(this)">
+<input type="file" name="cameraPhoto" id="cameraInput" class="hidden" accept="image/*" capture="environment" onchange="handleImageSelect(this)">
+<input type="file" name="galleryPhoto" id="galleryInput" class="hidden" accept="image/*" onchange="handleImageSelect(this)">
 
 <!-- 图片预览区域 -->
 <div id="preview"></div>
 
 <script>
-// 打开相机
-function openCamera() {
-    document.getElementById('cameraPhotoInput').click();
-}
-
-// 打开相册
-function openGallery() {
-    document.getElementById('galleryPhotoInput').click();
-}
-
 // 处理图片选择
 function handleImageSelect(input) {
     if (input.files && input.files[0]) {
